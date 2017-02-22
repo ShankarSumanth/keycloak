@@ -471,12 +471,11 @@
                     if (loggedIn) {
                         var callback = parseCallback(window.location.href);
 
-                        // condition 2: is loggedIn previously but oauth does not exist as page was refreshed
                         if (!callback && !kc.token) {
                             adapter = loadAdapter();
                             kc.login({});
                         }
-                        // condition 1: manual login to talfinder check, happens when user clicks login and logs in
+                        
                         if (callback) {
                             processCallback(callback, promise);
                         }
